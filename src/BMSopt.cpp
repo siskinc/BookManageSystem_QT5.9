@@ -71,7 +71,7 @@ std::map<std::string,Book> & BMSopt::getBooks()
             exit(0);
         }
         std::string name, id,author;
-        double price;
+        float price;
         unsigned int num,status;
         while(in>>name>>id>>price>>author>>num>>status){
             this->m_books.emplace(std::make_pair(id,Book(name,id,price,author,num,status)));

@@ -50,15 +50,17 @@ void SbBooksDialog::on_query_clicked()
         std::vector<std::string> & theReaderBooks = reader.getRecord();
         for(auto it2 = theReaderBooks.begin(); it2 != theReaderBooks.end(); it2++){
             auto book = books.find(*it2);
+            char * pprice  = removeLastZero(std::to_string(book->second.getPrice()).c_str());
             html += tr("<tr>")+
                     tr("<td>")+reader.getId().c_str()+("</td>")+
                     tr("<td>")+reader.getName().c_str()+("</td>")+
-                    tr("<td>")+std::to_string(reader.getGender()).c_str()+("</td>")+
+                    tr("<td>")+(reader.getGender() ? "男" : "女")+("</td>")+
                     tr("<td>")+book->second.getName().c_str()+("</td>")+
                     tr("<td>")+book->second.getAuthor().c_str()+("</td>")+
                     tr("<td>")+book->second.getId().c_str()+("</td>")+
-                    tr("<td>")+std::to_string(book->second.getPrice()).c_str()+("</td>")+
+                    tr("<td>")+pprice+("</td>")+
                     tr("</tr>");
+            delete pprice;
         }
     }
     if(html != "")
@@ -68,6 +70,5 @@ void SbBooksDialog::on_query_clicked()
 
 void SbBooksDialog::on_readerId_cursorPositionChanged(int arg1, int arg2)
 {
-    arg1,arg2;
     this->on_query_clicked();
 }

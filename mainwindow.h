@@ -17,6 +17,7 @@
 #include "retbookdialog.h"
 #include "sbbooksdialog.h"
 #include "bookreadersdialog.h"
+#include "removelastzero.h"
 /*
  * 主界面，主要是对图书的查询
  */

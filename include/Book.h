@@ -8,7 +8,7 @@
 class Book
 {
 public:
-    Book(std::string name , std::string id, double price , std::string author , unsigned int num,unsigned int status);
+    Book(std::string name , std::string id, float price , std::string author , unsigned int num,unsigned int status);
     Book();
     ~Book();
     //从文件获取借书人ID
@@ -20,7 +20,7 @@ public:
     //获取图书编号
     std::string getId();
     //获取图书单价
-    double getPrice();
+    float getPrice();
     //获取图书作者名
     std::string getAuthor();
     //图书是否在库，若在库，则返回true，反之返回false
@@ -43,7 +43,7 @@ private:
     //图书编号
     std::string m_id;
     //图书的单价，注意小数位数
-    double m_price;
+    float m_price;
     //图书的作者
     std::string m_author;
     //图书在库数量

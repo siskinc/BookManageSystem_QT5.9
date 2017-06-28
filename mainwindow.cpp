@@ -42,14 +42,16 @@ void MainWindow::on_viewAll_clicked()
                           tr("</tr>");
 
     for(auto it = books.begin(); it != books.end(); it++){
+        char * pprice  = removeLastZero(std::to_string(it->second.getPrice()).c_str());
         html += tr("<tr>")+
                 tr("<td>")+it->second.getName().c_str()+("</td>")+
                 tr("<td>")+it->second.getAuthor().c_str()+("</td>")+
                 tr("<td>")+it->second.getId().c_str()+("</td>")+
-                tr("<td>")+tr(std::to_string(it->second.getPrice()).c_str())+("</td>")+
+                tr("<td>")+tr(pprice)+("</td>")+
                 tr("<td>")+tr(std::to_string(it->second.getStatus()).c_str())+("</td>")+
                 tr("<td>")+tr(std::to_string(it->second.getNum()).c_str())+("</td>")+
                 tr("</tr>");
+        delete pprice;
     }
     html += tr("</table>");
     ui->BooksText->setText(html);

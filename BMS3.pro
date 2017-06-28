@@ -43,7 +43,8 @@ SOURCES += \
     lendbookdialog.cpp \
     retbookdialog.cpp \
     sbbooksdialog.cpp \
-    bookreadersdialog.cpp
+    bookreadersdialog.cpp \
+    removelastzero.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -64,7 +65,8 @@ HEADERS += \
     lendbookdialog.h \
     retbookdialog.h \
     sbbooksdialog.h \
-    bookreadersdialog.h
+    bookreadersdialog.h \
+    removelastzero.h
 
 FORMS += \
         mainwindow.ui \

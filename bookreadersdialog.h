@@ -5,6 +5,7 @@
 #include <QString>
 #include <QMessageBox>
 #include "include/BMSopt.h"
+#include "removelastzero.h"
 /*
  * 查询某一本书被哪些人借了
  */

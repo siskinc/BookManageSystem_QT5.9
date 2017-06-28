@@ -1,6 +1,6 @@
 #include "../include/Book.h"
 #include <QDebug>
-Book::Book(std::string name, std::string id, double price,std::string author,  unsigned int num,unsigned int status)
+Book::Book(std::string name, std::string id, float price,std::string author,  unsigned int num,unsigned int status)
 {
    this->m_name        =   name;
    this->m_id          =   id;
@@ -52,7 +52,7 @@ std::string Book::getId()
     return this->m_id;
 }
 
-double Book::getPrice()
+float Book::getPrice()
 {
     return this->m_price;
 }

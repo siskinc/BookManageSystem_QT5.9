@@ -6,6 +6,7 @@ QueryReaderDialog::QueryReaderDialog(QWidget *parent) :
     ui(new Ui::QueryReaderDialog)
 {
     ui->setupUi(this);
+    this->setWindowTitle("读者信息查询");
     this->opt = BMSopt::Instance();
 }
 
@@ -66,7 +67,7 @@ void QueryReaderDialog::on_query_clicked()
             }
             html += tr("<tr>")+
                     tr("<td>")+tr(temp.getName().c_str())+tr("</td>")+
-                    tr("<td>")+tr(std::to_string(temp.getGender()).c_str())+tr("</td>")+
+                    tr("<td>")+tr(temp.getGender() ? "男" : "女")+tr("</td>")+
                     tr("<td>")+tr(temp.getId().c_str())+tr("</td>")+
                     tr("</tr>");
         }
@@ -88,7 +89,7 @@ void QueryReaderDialog::on_queryAll_clicked()
         Reader & temp = it->second;
         html += tr("<tr>")+
                 tr("<td>")+tr(temp.getName().c_str())+tr("</td>")+
-                tr("<td>")+tr(std::to_string(temp.getGender()).c_str())+tr("</td>")+
+                tr("<td>")+tr(temp.getGender() ? "男" : "女")+tr("</td>")+
                 tr("<td>")+tr(temp.getId().c_str())+tr("</td>")+
                 tr("</tr>");
     }

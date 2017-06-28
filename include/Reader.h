@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <cstdlib>
+#include <cstring>
 /*
  * 读者类
  *
