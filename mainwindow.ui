@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>694</width>
+    <height>402</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>694</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetNoConstraint</enum>
+    </property>
+    <item row="1" column="1">
+     <widget class="QLabel" name="label_2">
+      <property name="maximumSize">
+       <size>
+        <width>123</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;图书名称:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="7">
+     <widget class="QLineEdit" name="bookNum"/>
+    </item>
+    <item row="1" column="5">
+     <widget class="QLineEdit" name="authorName"/>
+    </item>
+    <item row="1" column="3">
+     <widget class="QLineEdit" name="bookName">
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>作者名称:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="11">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; color:#3465a4;&quot;&gt;四川理工学院图书管理系统&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="6">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>图书编号:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="10">
+     <widget class="QPushButton" name="exit">
+      <property name="text">
+       <string>退出</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="11">
+     <widget class="QTextEdit" name="BooksText">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="9">
+     <widget class="QPushButton" name="reset">
+      <property name="text">
+       <string>重置</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="10">
+     <widget class="QPushButton" name="Inquire">
+      <property name="text">
+       <string>查询</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="10">
+     <widget class="QPushButton" name="viewAll">
+      <property name="text">
+       <string>查看全部</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>694</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>图书借还</string>
+    </property>
+    <addaction name="lendBook"/>
+    <addaction name="retBook"/>
+    <addaction name="queryBooks"/>
+    <addaction name="queryReaders"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>库存管理</string>
+    </property>
+    <addaction name="delBook"/>
+    <addaction name="addBook"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>用户管理</string>
+    </property>
+    <addaction name="logReader"/>
+    <addaction name="logAdmin"/>
+    <addaction name="separator"/>
+    <addaction name="resetAdmin"/>
+    <addaction name="separator"/>
+    <addaction name="delReader"/>
+    <addaction name="separator"/>
+    <addaction name="queryReader"/>
+    <addaction name="queryAdmin"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="help"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="lendBook">
+   <property name="text">
+    <string>借书</string>
+   </property>
+  </action>
+  <action name="retBook">
+   <property name="text">
+    <string>还书</string>
+   </property>
+  </action>
+  <action name="logReader">
+   <property name="text">
+    <string>借书人注册</string>
+   </property>
+  </action>
+  <action name="logAdmin">
+   <property name="text">
+    <string>管理员注册</string>
+   </property>
+  </action>
+  <action name="help">
+   <property name="text">
+    <string>帮助</string>
+   </property>
+  </action>
+  <action name="delBook">
+   <property name="text">
+    <string>删除图书</string>
+   </property>
+  </action>
+  <action name="addBook">
+   <property name="text">
+    <string>添加图书</string>
+   </property>
+  </action>
+  <action name="resetAdmin">
+   <property name="text">
+    <string>管理员修改密码</string>
+   </property>
+  </action>
+  <action name="delReader">
+   <property name="text">
+    <string>借书人注销</string>
+   </property>
+  </action>
+  <action name="queryReader">
+   <property name="text">
+    <string>借书人查询</string>
+   </property>
+  </action>
+  <action name="queryAdmin">
+   <property name="text">
+    <string>管理员查询</string>
+   </property>
+  </action>
+  <action name="queryBooks">
+   <property name="text">
+    <string>查询已借图书</string>
+   </property>
+  </action>
+  <action name="queryReaders">
+   <property name="text">
+    <string>查询借书人</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>bookName</tabstop>
+  <tabstop>authorName</tabstop>
+  <tabstop>bookNum</tabstop>
+  <tabstop>reset</tabstop>
+  <tabstop>Inquire</tabstop>
+  <tabstop>viewAll</tabstop>
+  <tabstop>exit</tabstop>
+  <tabstop>BooksText</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
